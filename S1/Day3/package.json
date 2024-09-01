@@ -1,0 +1,22 @@
+{
+  "name": "first_project",
+  "version": "1.0.0",
+  "description": "This is my first node project",
+  "main": "index.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/neelmani0/Node.js.git"
+  },
+  "author": "Neelmani",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/neelmani0/Node.js/issues"
+  },
+  "homepage": "https://github.com/neelmani0/Node.js#readme",
+  "dependencies": {
+    "is-even": "^1.0.0"
+  }
+}
