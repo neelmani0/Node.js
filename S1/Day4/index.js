@@ -16,13 +16,13 @@ const server = http.createServer((req,res)=>{
                 res.write("These are the followind data you have requested\n")
                 res.end(data)
             }
-        })
+        }) 
     }else if(req.url==="/blog"){
         res.write("Data1")
         res.write("Data2")
         res.write("Data 3")
         res.end
-    }else if(req.url==="/data"){
+    }else if(req.url==="/add"){
       const user= {
         name:"Neel",
         age:25,
