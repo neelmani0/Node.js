@@ -32,6 +32,15 @@ const server = http.createServer((req,res)=>{
       data.push(user)
       fs.writeFileSync("./data.json",JSON.stringify(data))
       res.end("Data is pushed and updated")
+    }else if(req.url==="/new" && req.method==="POST"){
+        let str =""
+        req.on("data", (chunk)=>{
+            str+=chunk
+        })
+        req.on("end", ()=>{
+            console.log(str)
+        })
+        res.end("Data sent")
     }else{
         res.end("404 Not Found !!")
     }
