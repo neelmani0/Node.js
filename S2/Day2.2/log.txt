@@ -1,0 +1,3 @@
+Clint visited /student and the method was GET at Thu Sep 05 2024 02:47:16 GMT+0530 (India Standard Time)
+Clint visited /students and the method was GET at Thu Sep 05 2024 02:47:20 GMT+0530 (India Standard Time)
+Clint visited /teachers and the method was GET at Thu Sep 05 2024 02:47:34 GMT+0530 (India Standard Time)
