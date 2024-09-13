@@ -1,0 +1,14 @@
+{
+    "movies":[
+    {
+        "id":1,
+        "name":"RRR",
+        "director":"SS"
+    },
+    {
+        "id":2,
+        "name":"Dhoom",
+        "director":"XYZs"
+    }
+]
+}
