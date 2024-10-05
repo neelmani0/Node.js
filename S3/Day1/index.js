@@ -12,7 +12,7 @@ const main = async ()=>{
     //   const user = new UserModel({
     //     name:"Thor",
     //     age:"300",
-    //     city:"assgard"
+    //     city:"asgard"
     //   })
     //   user.save()
 
