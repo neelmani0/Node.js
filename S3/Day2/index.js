@@ -4,7 +4,7 @@ const express = require("express")
 
 
 const app = express()
-app.use(exprees.json())
+app.use(express.json())
 
 app.get("/",(reqs,res)=>{
      res.send("HOME PAGE")
