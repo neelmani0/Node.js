@@ -1,9 +1,9 @@
 const { default: mongoose } = require("mongoose")
 const {connection,userModel} = require("./db.js")
-const exprees = require("express")
+const express = require("express")
 
 
-const app = exprees()
+const app = express()
 app.use(exprees.json())
 
 app.get("/",(reqs,res)=>{
