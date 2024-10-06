@@ -1,17 +1,9 @@
-const { default: mongoose } = require("mongoose")
-const {connection,userModel} = require("./db.js")
 const express = require("express")
+const userRouter = express.Router()
+const {userModel} = require("../model/user.model")
 
-
-const app = express()
-app.use(express.json())
-
-app.get("/",(req,res)=>{ 
-     res.send("HOME PAGE")
-})
- 
 // Create
-app.post("/adduser",async (req,res)=>{
+userRouter.post("/add",async (req,res)=>{
     const payload=req.body
     try {
         const user = new userModel(payload)
@@ -20,10 +12,10 @@ app.post("/adduser",async (req,res)=>{
     } catch (error) {
         res.status(400).send({"msg":error.message})
     }  
-})
+}) 
 
 //Read
-app.get("/users",async (req,res)=>{
+userRouter.get("/",async (req,res)=>{
     const query = req.query
     console.log(query)
     try {
@@ -34,7 +26,7 @@ app.get("/users",async (req,res)=>{
     }
 })
  //Update
- app.patch("/updateuser/:userId",async (req,res)=>{
+ userRouter.patch("/update/:userId",async (req,res)=>{
     const {userId}=req.params
     const payload = req.body
     try{
@@ -45,7 +37,7 @@ app.get("/users",async (req,res)=>{
     }
  })
 // Delete
-app.delete("/deleteuser/:userId",async (req,res)=>{
+userRouter.delete("/delete/:userId",async (req,res)=>{
     const {userId} = req.params
     try{
       await userModel.findByIdAndDelete({_id:userId})
@@ -54,14 +46,7 @@ app.delete("/deleteuser/:userId",async (req,res)=>{
         res.status(400).send({"msg":err.message})
     }
 })
-app.listen(8080,async ()=>{
-     try {
-        await connection
-    console.log("Connected to mongo")
-     } catch (error) {
-        console.log("Something went wrong check the connection")
-        console.log(error.message)
-     }
-    
-    console.log("server is running on port no 8080")
-})
+
+module.exports = {
+    userRouter
+}
