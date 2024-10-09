@@ -33,7 +33,7 @@ userRouter.post("/login",async (req,res)=>{
         console.log(err.message)
     }  
 })
- userRouter.get("/details",(req,res)=>{
+ userRouter.get("/ ",(req,res)=>{
     const {token}=req.query
     jwt.verify(token,'bruce',(err,decoded)=>{
         decoded?res.status(200).send("User Details") : res.status(400).send({"mag":"Login require, cannot CCESS THE RESTRICTED ROUTS"})
