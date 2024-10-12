@@ -18,7 +18,10 @@ const LogIn = ()=>{
             },
             body:JSON.stringify(payload)
         }).then((res)=>res.json())
-          .then((res)=>console.log(res))
+          .then((res)=>{
+            console.log(res);
+            localStorage.setItem("token",res.token)
+        })
           .catch((err)=>console.log(err))
     }
 
