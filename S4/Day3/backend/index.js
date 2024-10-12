@@ -3,9 +3,10 @@ const {connection} = require("./db")
 const {userRouter} = require("./routes/user.route")
 const {noteRouter} = require("./routes/note.route")
 const {auth} = require("./middleware/auth.middleware")
-
+const cors = require('cors')
 const app = express()
 app.use(express.json())
+app.use(cors())
   //Authorization
 //user router
 app.use("/users",userRouter)
@@ -13,7 +14,7 @@ app.use("/users",userRouter)
 //middleware
 app.use(auth)
 
-// note Router
+// note Router 
 app.use("/notes",noteRouter)
 
 // server running port
